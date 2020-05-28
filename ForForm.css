@@ -1,0 +1,262 @@
+* {
+	/* величина отступа и разметка величины */
+	margin: 0;
+	box-sizing: border-box;
+}
+body {
+	/* настройка общего цвета и шрифта */
+	background: rgb(136, 84, 86);
+	font-family: 'segoe script', sans-serif;
+	
+}
+.post-wrap {
+	/* общая ширина объекта отступы и создание контейнера для дочерних элементов */
+	max-width: 1120px;
+	margin: 0 auto;
+	display: flex;
+	/* положение блоков с центра друг за другом */
+	justify-content: center;
+	flex-wrap: wrap;
+}
+.post-item {
+	/* курсор и его размер */
+	padding: 15px;	
+	cursor: pointer;
+}
+.post-item * {
+	/* отвечает за плавность перехода */
+	transition: .3s linear;
+}
+.item-content {
+	/* окраска компонента и размер */
+	background: rgb(197, 138, 50);
+    padding: 50px;
+}
+.item-icon {
+	margin-bottom: 20px;
+}
+.item-icon:before {
+	/* подключение и установка размера мини-кртинок */
+	content: "";
+	font-family: FontAwesome;
+	color: rgb(156, 15, 20);
+	font-size: 50px;
+	line-height: 1;
+}
+
+/* подключение разных мини-картинок */
+
+.item-icon.photo:before {
+	content: "\f030";
+}
+.item-icon.video:before {
+	content: "\f03d";
+}
+.item-icon.gift:before {
+	content: "\f06b";
+}
+.item-icon.group:before {
+	content: "\f091";
+}
+.item-icon.tree:before {
+	content: "\f1bb";
+}
+.item-icon.anchor:before {
+	content: "\f13d";
+}
+
+
+ /* сдвигаем элементы */
+.post-item:hover .item-icon,
+.post-item:hover .item-body h3,
+.post-item:hover .item-body p {
+	transform: translateY(-8px);
+}
+
+.post-item:hover .item-body li {
+	/* Подкрашивающиеся артикулы при наведении */
+	transform: translateY(-8px);
+	transform: translateX(8px);
+	color:rgb(255, 255, 255);
+}
+
+
+
+.item-body {
+	/* насыщенность шрифта */
+	color: rgb(255, 255, 255);
+	font-size: 14px; 
+}
+.item-body h3 {
+	/* отступы и сдвиги h3*/
+	font-weight: 500;
+    margin-bottom: 15px;
+	transition-delay: .05s;
+}
+
+.item-body ul li {
+	/* раскраска артикулов */
+	font-weight: 500;
+	margin-bottom: 15px;
+	color: rgb(197, 138, 50);
+	transition-delay: .05s;
+}
+
+.item-footer {
+	padding-top: 15px;
+}
+.link {  
+	/* всплывающее значение подробнее */
+	text-decoration: none;	
+	display: inline-block; 
+	/* скрывает элемент */
+	overflow: hidden;	
+	/* положение адаптирующееся */
+	position: relative;
+	padding-right: 30px;
+	font-size: 12px;
+	/* выплывает */
+    text-transform: uppercase;
+    font-weight: 600;
+    color: #F5E2CD;
+}
+.link:before {  
+	  /* описание положения для черты от "Подробнее" */
+    content: "";
+    position: absolute;
+    top: 0;
+	left: 0;
+    width: 100%;
+	bottom: 0;
+    height: .125rem;
+	margin: auto;
+	background: #F09EA3;
+    transform: scaleX(.2);
+	transform-origin: left center;
+	/* Что бы элементы не накладывались */
+    z-index: 0;
+	transition: .6s cubic-bezier(.6, .01, 0, 1);
+} 
+.link span {
+	display: inline-block;
+    position: relative;
+    transform: translateX(-200%);    
+    transition: .6s cubic-bezier(.6, .01, 0, 1);
+}
+.post-item:hover .link span {
+    transform: translateX(0%);
+}
+.post-item:hover .link:before {
+	transform-origin: right center;
+} 
+@media (min-width: 768px) {
+	.post-item {
+		flex-basis: 50%;
+		flex-shrink: 0;				
+	}
+}
+@media (min-width: 960px) {
+	.post-item {
+		flex-basis: 40%;			
+	}
+}
+
+.button1:before {
+	content: "\f053";
+}
+.button2:before {
+	content: "\f054";
+}
+
+.button1:hover {
+	background-color: rgb(156, 15, 20);
+    color: white;
+}
+
+.button2:hover {
+    background-color: rgb(156, 15, 20);
+	color: white;
+	
+}
+
+.button1 {
+	
+
+	font-family: FontAwesome;
+	color: rgb(156, 15, 20);
+	line-height: normal;
+
+	border: #F5E2CD;
+    padding: 10px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+	font-size: 20px;
+	
+	background-color: rgb(197, 138, 50);
+
+    transition-duration: 0.5s;
+}
+
+.button2 {
+	
+
+	font-family: FontAwesome;
+	color: rgb(156, 15, 20);
+	line-height: normal;
+
+	border: #F5E2CD;
+    padding: 10px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+	font-size: 20px;
+	
+	background-color: rgb(197, 138, 50);
+
+    transition-duration: 0.5s;
+}
+
+
+img{
+	text-align: center;
+	padding: auto;
+    height: auto;
+    width: 200px;
+
+	padding: 10px;
+    height: 100px;
+
+    margin: 10px;
+}
+
+.slider1 .button1 {
+  position: relative;
+
+  
+}
+
+a {
+	color: rgb(156, 15, 20);
+	font-size: 20px;
+}
+
+
+/* .item-content  .button1{
+	position: sticky;
+	top: 22%;
+
+}
+
+.button2{
+	position: sticky;
+	top: 22%;
+
+} */
+
+/* .section1 img{
+    padding: 20px;
+    height: 100px;
+    width: 200px;
+    margin: 0 auto;
+} */
